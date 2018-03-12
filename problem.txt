@@ -1,0 +1,12 @@
+Financial institutions are often seen as a front line in fight against terrorist organizations and money laundering. Banks are obligated to have adequate systems and controls in place to ensure international sanctions compliance. Payment sanction screening algorithms may be very complex to implement and penalties for failure to comply can be severe. They are a number of different bodies that impose financial sanctions – European Union, United Nations and local governments. As a result, payments are usually screened against more than 30 public sanction lists.
+
+Application developed for the sake of this article is responsible for processing Elixir0 messages. Elixir0 is a country-domestic Polish bank message format that represents standard credit transfer transactions. All payments contained by Elixir0 are screened against OFAC’s Specially Designated Nationals List. Screening algorithm performs fuzzy matching of beneficiary and ordering party name, address and alternate name against every SDN entity. If algorithm detects that sanctions might be imposed on ordering or receiving party, placement of the particular transaction is suspended and waits for manual approval.
+
+Please bear in mind that the implementation of payment sanction screening mechanism used in the sample application is not the most optimal and performant algorithm for this task. Also, it should not be considered as a complete solution.
+
+The entire transaction import process consist of three steps:
+
+Load transactions from Elixir0 message into the database,
+Perform fuzzy string matching of name, address and alternate name of beneficiary and ordering party against all registered SDN entities. In case of similarity metric high enough, potential sanction match is registered,
+Accept transactions without potential SDN matches registered, suspend transactions that have at least one SDN match registered.
+Unsurprisingly, the second step is the most costly one and scaling strategies described in this article are explained on this step.
