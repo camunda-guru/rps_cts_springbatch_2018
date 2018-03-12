@@ -1,0 +1,93 @@
+1. Spring Batch provides a lot of flexibility and guarantees to your application, but it cannot work in a vacuum. To do its work:-
+a) Job
+b) JobRepo
+c) JobRepository
+d) All of the mentioned
+
+
+2. There’s only one really useful implementation of the JobRepository interface, which stores information about the state of the batch processes in a database.
+a) SimpleJobRepository
+b) SimpleJob
+c) SimpleRepo
+d) All of the mentioned
+
+
+3. To load the contents of a properties file (batch.properties) whose values you use to configure the data source.
+a) PropertyPlaceholder
+b) PropertyPlaceholderConfigurer
+c) Property
+d) PropertyConfigurer
+
+
+4. MapJobRegistry instance. This is critical—it is the central store for information regarding a given Job.
+a) True
+b) False
+
+
+5. SimpleJobLauncher, whose sole purpose is to give you a mechanism to launch batch jobs, where a “job” in this case is our batch solution.
+a) True
+b) False
+
+
+6. Spring Batch models solutions using XML schema.
+a) True
+b) False
+
+
+7. However, it’s important to wear another hat, that of a DBA, when writing applications.
+a) True
+b) False
+
+
+8. Indeed, a step could be considered the smallest unit of work for a job. Input (what’s read) is passed to the Step and potentially processed; then output (what’s written) is created from the step.
+a) Steplet
+b) Tasklet
+c) All of the mentioned
+d) None of the mentioned
+
+
+9. Attribute to configure how many items will be processed before the transaction is committed all the input is sent to the writer.
+a) interval
+b) commit
+c) commit-interval
+d) none of the mentioned
+
+
+10. Class which delegates the task of delimiting fields and records within a file to a LineMapper, which in turn delegates the task of identifying the fields within that record, to LineTokenizer.
+a) org.springframework.batch.item.file.FlatFileItemReader
+b) org.springframework.batch.item.file.FlatFile
+c) org.springframework.batch.item.file.FlatFileItem
+d) org.springframework.batch.item.file.FileItemReader
+
+
+11. The names and values for the named parameters are being created by the bean configured for the itemSqlParameterSourceProvider property, an instance of the interface
+a) BeanPropertyItemSqlParameterSourceProvider
+b) BeanPropertyItemSqlParameterSource
+c) BeanPropertyItemSqlParameter
+d) All of the mentioned
+
+
+12. There’s support for writing JMS:-
+a) JmsItemWriter
+b) JpaItemWriter
+c) JdbcBatchItemWriter
+d) All of the mentioned
+
+
+13. The processor attribute on the chunk element expects a reference to a bean of the interface:-
+a) org.springframework.batch.item.Item
+b) org.springframework.batch.item
+c) org.springframework.batch.item.ItemProcessor
+d) none of the mentioned
+
+
+14. Spring Batch provides a convenience class, CompositeItemProcessor, which forwards the output of the filter to the input of the successive filter.
+a) True
+b) False
+
+
+15. If the preceding job was run on a batch with a 100 rows, each item was read and passed through the processor, and it found 10 items invalid (it returned null 10 times), the value for the filter_count column would be:-
+a) 100
+b) 1
+c) 10
+d) 1000
